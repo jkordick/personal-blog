@@ -1,0 +1,13 @@
+.tag {
+  display: inline-block;
+  font-size: 1.4rem;
+
+  @include themed() {
+    color: t('primary-light');
+  }
+
+
+  &::before {
+    content: '#';
+  }
+}
