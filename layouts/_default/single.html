@@ -57,23 +57,13 @@
 
       {{ .Content }}
 
-      {{- if isset .Params "series" -}}
-        {{- partial "series.html" . -}}
-
-
-      {{- end -}}
-
+  
       {{- if (eq .Site.Params.relatedPosts true) -}}
         {{- partial "related.html" . -}}
 
 
       {{- end -}}
 
-      {{- if (eq .Site.Params.mermaid.enable true) -}}
-        {{- partial "mermaid.html" . -}}
-
-
-      {{- end -}}
     </div>
     <div class="post__footer">
       {{ with .Page.Params.Categories }}

@@ -9,7 +9,7 @@
   {{ hugo.Generator }}
 
   <title>{{ .Site.Title | markdownify }}{{ if .IsHome }} | {{ .Params.Description }}{{ else }} | {{ .Title | markdownify }}{{ end }}</title>
-  <link rel="stylesheet" href='{{ "plugins/bootstrap/css/bootstrap.min.css" | absURL }}'>
+  <link rel="stylesheet" href='{{ "bootstrap/css/bootstrap.min.css" | absURL }}'>
 
   {{ $sass := resources.Get "scss/main.scss" }}
   {{ $style := $sass | resources.ToCSS | minify }}

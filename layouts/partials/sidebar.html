@@ -1,50 +1,40 @@
-<div
-  class="sidebar{{ with .Site.Params.doNotLoadAnimations }}
-    .
-
-  {{ else }}
-    animated fadeInDown
-
-  {{ end }}"
->
-  <div class="sidebar__content">
-    <div class="sidebar__introduction">
-      <img
-        class="sidebar__introduction-profileimage"
-        src="{{ .Site.Params.profilePicture | relURL }}"
-        alt="profile picture"
-      />
-      {{ if .IsHome }}
-        <h1 class="sidebar__introduction-title">
-          <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
-        </h1>
-
-      {{ else }}
-        <div class="sidebar__introduction-title">
-          <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
-        </div>
-
-      {{ end }}
-      <div class="sidebar__introduction-description">
-        <p>{{ replace .Site.Params.description "\n" "<br />" | safeHTML }}</p>
-      </div>
+<div class="sidebar">
+  <div class="introduction">
+    <img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture" />
+    <h1>
+      <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+    </h1>
+    <div class="description">
+      <h2>{{ .Site.Params.description }}&nbsp;</h2>
+      <div id="typed-strings">
+        <h3>Software Engineer</h3>
+        <p>Cloud Solution Architect</p>
+        <p>woman</p>
+        <p>Slytherin &#128013</p>
     </div>
-    <ul class="sidebar__list">
-      {{ range $item := .Site.Params.socialIcons }}
-        <li class="sidebar__list-item">
-          <a
-            href="{{ $item.url }}"
-            target="_blank"
-            rel="noopener"
-            aria-label="{{ $item.title }}"
-            title="{{ $item.title }}"
-          >
-            <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
-          </a>
-        </li>
-
-      {{ end }}
-    </ul>
+    <h2 id="typed"></h2>
+    <script>
+        window.addEventListener('load', function () {
+            var typed = new Typed('#typed', {
+                stringsElement: '#typed-strings',
+                typeSpeed: 70,
+                backSpeed: 30,
+                fadeOut: false,
+                loop: true,
+                showCursor: false
+            });
+        });
+    </script>
+    </div>
   </div>
-  {{ partial "footer.html" (dict "context" . "footerClassModifier" "sidebar") }}
+  <ul class="socials">
+    {{ range $item := .Site.Params.socialIcons }}
+    <li class="list-item">
+      <a href="{{ $item.url }}" target="_blank" rel="noopener" aria-label="{{ $item.title }}" title="{{ $item.title }}">
+        <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ partial "footer.html" . }}
 </div>

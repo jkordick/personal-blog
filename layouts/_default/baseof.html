@@ -2,21 +2,12 @@
 <html class="no-js" lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" scroll-behavior="smooth">
 {{ partial "head.html" . }}
 
-<body id="body" data-spy="scroll" class="body theme--dark">
+<body id="body" data-spy="scroll">
 
-  <div class="wrapper">
-    <aside class="wrapper__sidebar">
-      {{ partial "sidebar.html" . }}
-    </aside>
-
-    <div id="content">
-      <header class="header">{{ partial "navbar.html" . }}</header>
-      {{ block "main" . }}{{ end }}
-    </div>
-
+  <div class="base-layout">
+    {{ partial "sidebar.html" . }}
+    {{ block "main" . }}{{ end }}
   </div>
-
-  {{ partial "footer.html" (dict "context" . "footerClassModifier" "base") }}
 
 </body>
 

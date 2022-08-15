@@ -1,28 +1,94 @@
-@import './modules/variables';
-@import './modules/config';
-@import './modules/color_theme';
-@import './partials/hugo';
-@import './partials/base';
-@import './partials/layout/html';
-@import './partials/layout/body';
-@import './partials/layout/header';
-@import './partials/layout/nav';
-@import './partials/components/animated';
-@import './partials/components/category';
-@import './partials/components/tag';
-@import './partials/components/wrapper';
-@import './partials/components/sidebar';
-@import './partials/components/footer';
-@import './partials/components/pagination';
-@import './partials/components/navbarburger';
-@import './partials/components/comment';
-@import './partials/components/optionswitch';
-@import './partials/components/post';
-@import './partials/components/alert';
-@import './partials/components/portfolio';
-@import './partials/components/page404';
-@import './partials/components/archive';
-@import './partials/components/notice';
-@import './partials/vendors/mediumzoom';
-@import './partials/vendors/contactform';
-@import './partials/vendors/tableofcontents';
+:root {
+    --color-light: #74c044;
+    --color-dark: #1d8b44;
+    --color-dark-grey: #2b2c28;
+    --color-black: #131515;
+    --color-white: #FFFAFB;
+}
+
+
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    scroll-behavior: smooth;
+    background-color: var(--color-dark-grey);
+    color: var(--color-dark)
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: all 0.1s ease-in;
+
+    &:hover {
+        color: var(--color-white);
+    }
+}
+
+.base-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #131515;
+
+    .introduction {
+        width: 400px;
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            width: 300px;
+        }
+
+        .description {
+            margin-top: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: row;
+        }
+
+    }
+
+    .socials {}
+}
+
+.content {
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+
+    .navbar {}
+
+    .blog {}
+
+    .portfolio {}
+
+    .links {}
+
+    .imprint {}
+}
+
+.footer {
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
