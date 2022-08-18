@@ -4,43 +4,55 @@ summaryLength = 35
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
-    [markup.goldmark.parser]
-      attribute = true
-      autoHeadingID = true
-    [markup.goldmark.renderer]
-      hardWraps = false
-      unsafe = true
-      xHTML = false
+[markup.goldmark]
+[markup.goldmark.extensions]
+definitionList = true
+footnote = true
+linkify = true
+strikethrough = true
+table = true
+taskList = true
+typographer = true
+[markup.goldmark.parser]
+attribute = true
+autoHeadingID = true
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = true
+xHTML = false
 
 [menu]
-    [[menu.nav]]
-    name = ":cool: blog"
-    URL = "/"
-    weight = 1
+[[menu.nav]]
+name = ":cool: blog"
+URL = "#blog"
+identifier = "blog"
+weight = 1
+[menu.nav.params]
+class = "show active"
 
-    [[menu.nav]]
-    name = ":memo: portfolio"
-    URL = "#portfolio"
-    weight = 2
+#[[menu.nav]]
+#name = ":memo: portfolio"
+#URL = "#portfolio"
+#identifier = "portfolio"
+#weight = 2
+#[menu.nav.params]
+#class = ""
+#
+#[[menu.nav]]
+#name = ":rainbow: about"
+#URL = "#about"
+#identifier = "about"
+#weight = 3
+#[menu.nav.params]
+#class = ""
 
-    [[menu.nav]]
-    name = ":rainbow: links"
-    URL = "#links"
-    weight = 3
-
-    [[menu.nav]]
-    name = ":abc: imprint"
-    URL = "#imprint"
-    weight = 4
+#[[menu.nav]]
+#name = ":abc: imprint"
+#URL = "#imprint"
+#identifier = "imprint"
+#weight = 4
+#[menu.nav.params]
+#class = ""
 
 [params]
 
@@ -50,10 +62,6 @@ author = "Julia Kordick"
 description = "I am a"
 profilePicture = "images/profile.jpg"
 favicon = "favicons/"
-doNotLoadAnimations = false
-singleDateFormat = "2/1/2006"
-indexDateFormat = "2/1/2006"
-listDateFormat = "2/1/2006"
 
 
 reversepagetitle = true # When set to 'true', the Window Title will be reversed to 'Title | Author' instead of the default 'Author | Title'
@@ -75,7 +83,3 @@ url = "https://github.com/lxndrblz/anatole/"
 icon = "fas fa-envelope"
 title = "e-mail"
 url = "mailto:mail@example.com"
-
-
-
-

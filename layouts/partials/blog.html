@@ -1,0 +1,7 @@
+{{ range where .Site.RegularPages "Type" "blog" }}
+<div class="blog__summary">
+    <a href="{{ .Permalink }}" target="_blank"><h2>{{ .Title }}</h2></a>
+    <span>{{ time.Format "Mon, Jan 2, 2006" .Date }}</span>
+    <p>{{ .Summary }}</p>
+</div>
+{{ end }}

@@ -1,5 +1,15 @@
-<ul class="navbar nav nav-pills nav-fill">
+<nav class="nav-bar">
+  <div class="nav nav-tabs" role="tablist">
+    {{ range $.Site.Menus.nav }}
+    <button class="nav-link {{ .Params.class }}" aria-controls="{{ .Identifier }}" data-bs-toggle="tab"
+      data-bs-target="{{ .URL }}" type="button" role="tab">{{ .Name | emojify }}</button>
+    {{ end }}
+  </div>
+</nav>
+
+<div class="tab-content">
   {{ range $.Site.Menus.nav }}
-  <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ .URL }}">{{ .Name | emojify }}</a></li>
+  <div class="tab-pane fade {{ .Params.class }}" id="{{ .Identifier }}" role="tabpanel"
+    aria-labelledby="{{ .Identifier }}">   {{ partial (printf "%s.html" .Identifier) $ }}</div>
   {{ end }}
-</ul>
+</div>
