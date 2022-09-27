@@ -4,11 +4,17 @@
   <meta name="author" content="{{ .Site.Params.author }}">
   <meta http-equiv="content-language" content="de-DE" />
 
+  <meta property="og:image" content="{{ .Site.BaseURL }}images/og_image.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:description" content="{{ .Site.Params.pageDescription }}">
+  <meta property="twitter:image" content="{{ .Site.BaseURL }}images/og_image.jpg">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {{ hugo.Generator }}
 
-  <title>{{ .Site.Title | markdownify }}{{ if .IsHome }} | {{ .Site.Params.pageDescription }}{{ else }} | {{ .Title | markdownify }}{{ end }}</title>
+  <title>{{ .Site.Title | markdownify }}{{ if .IsHome }} | {{ .Site.Params.pageDescription }}{{ else }} | {{ .Title |
+    markdownify }}{{ end }}</title>
   <link rel="stylesheet" href='{{ "bootstrap/css/bootstrap.min.css" | absURL }}'>
   <link rel="stylesheet" href='{{ "fontawesome/css/all.min.css" | absURL }}'>
 
