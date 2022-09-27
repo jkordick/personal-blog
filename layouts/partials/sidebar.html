@@ -29,9 +29,9 @@
   </div>
   <ul class="socials">
     {{ range $item := .Site.Params.socialIcons }}
-    <li class="list-item">
+    <li>
       <a href="{{ $item.url }}" target="_blank" rel="noopener" aria-label="{{ $item.title }}" title="{{ $item.title }}">
-        <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+        <i class="{{ $item.icon }}" aria-hidden="true"></i>
       </a>
     </li>
     {{ end }}

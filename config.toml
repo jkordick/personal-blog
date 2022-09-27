@@ -63,23 +63,19 @@ description = "I am a"
 profilePicture = "images/profile.jpg"
 favicon = "favicons/"
 
-
-reversepagetitle = true # When set to 'true', the Window Title will be reversed to 'Title | Author' instead of the default 'Author | Title'
-
-## Social links
-# use 'fab' when brand icons, use 'fas' when standard solid icons.
-[[socialIcons]]
-icon = "fab fa-linkedin"
+[[params.socialIcons]]
+icon = "fab fa-linkedin-in"
 title = "Linkedin"
-url = "https://de.linkedin.com/"
+url = "https://www.linkedin.com/in/julia-kordick/"
 
-[[socialIcons]]
+[[params.socialIcons]]
 icon = "fab fa-github"
 title = "GitHub"
-url = "https://github.com/lxndrblz/anatole/"
+url = "https://github.com/jkordick"
 
-
-[[socialIcons]]
+[[params.socialIcons]]
 icon = "fas fa-envelope"
 title = "e-mail"
-url = "mailto:mail@example.com"
+url = "mailto:moin@jkordick.dev"
+
+
