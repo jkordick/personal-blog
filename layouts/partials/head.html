@@ -1,6 +1,6 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="description" content="{{ .Params.Description }}">
+  <meta name="description" content="{{ .Site.Params.pageDescription }}">
   <meta name="author" content="{{ .Site.Params.author }}">
   <meta http-equiv="content-language" content="de-DE" />
 
@@ -8,10 +8,15 @@
 
   {{ hugo.Generator }}
 
-  <title>{{ .Site.Title | markdownify }}{{ if .IsHome }} | {{ .Params.Description }}{{ else }} | {{ .Title | markdownify }}{{ end }}</title>
+  <title>{{ .Site.Title | markdownify }}{{ if .IsHome }} | {{ .Site.Params.pageDescription }}{{ else }} | {{ .Title | markdownify }}{{ end }}</title>
   <link rel="stylesheet" href='{{ "bootstrap/css/bootstrap.min.css" | absURL }}'>
   <link rel="stylesheet" href='{{ "fontawesome/css/all.min.css" | absURL }}'>
- 
+
+  <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}favicon/favicon-96x96.ico">
+  <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon/favicon_16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon/favicon_32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon/favicon_96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="{{ .Site.BaseURL }}favicon/apple-touch-icon-180x180.png" sizes="180x180">
 
   {{ $sass := resources.Get "scss/main.scss" }}
   {{ $style := $sass | resources.ToCSS | minify }}

@@ -60,6 +60,7 @@ title = "Hello, my name is Julia!"
 author = "Julia Kordick"
 #copyright = "2020-2021"
 description = "I am a"
+pageDescription = 'Julia is writing about Software Architecture, DevOps and Diversity'
 aboutDescription = "I am Cloud Solution Architect @ Microsoft"
 socialsDescription = "Feel free to contact me:"
 profilePicture = "images/profile.jpg"
