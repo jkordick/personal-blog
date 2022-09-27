@@ -1,8 +1,7 @@
 {{ define "main" }}
 <div class="blog">
-  <a href="{{ .Permalink }}" target="_blank"><h2>{{ .Title }}</h2></a>
-    <span>{{ time.Format "Mon, Jan 2, 2006" .Date }}</span>
-    <p>{{ .Content }}</p>
-
+  <h1>{{ .Title }}</h1>
+  <span>{{ time.Format "Mon, Jan 2, 2006" .Date }}</span>
+  <p>{{ .Content }}</p>
 </div>
 {{ end }}

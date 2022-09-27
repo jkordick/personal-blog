@@ -1,1 +1,22 @@
-test links
+<div class="about">
+    <div class="introduction">
+        <!--<img src="{{ .Site.Params.profilePicture | relURL }}" alt="profile picture" />-->
+        <h2 class="pseudo-h1">
+            <a href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Params.Title }}</a>
+        </h2>
+        <div class="description">
+            <h2>{{ .Site.Params.aboutDescription }}&nbsp;</h2>
+        </div>
+    </div>
+    <h2>{{ .Site.Params.socialsDescription }}&nbsp;</h2>
+    <ul class="socials">
+        {{ range $item := .Site.Params.socialIcons }}
+        <li>
+            <a href="{{ $item.url }}" target="_blank" rel="noopener" aria-label="{{ $item.title }}"
+                title="{{ $item.title }}">
+                <i class="{{ $item.icon }}" aria-hidden="true"></i>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</div>

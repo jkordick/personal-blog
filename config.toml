@@ -38,13 +38,13 @@ class = "show active"
 #[menu.nav.params]
 #class = ""
 #
-#[[menu.nav]]
-#name = ":rainbow: about"
-#URL = "#about"
-#identifier = "about"
-#weight = 3
-#[menu.nav.params]
-#class = ""
+[[menu.nav]]
+name = ":rainbow: about"
+URL = "#about"
+identifier = "about"
+weight = 3
+[menu.nav.params]
+class = ""
 
 #[[menu.nav]]
 #name = ":abc: imprint"
@@ -60,21 +60,23 @@ title = "Hello, my name is Julia!"
 author = "Julia Kordick"
 #copyright = "2020-2021"
 description = "I am a"
+aboutDescription = "I am Cloud Solution Architect @ Microsoft"
+socialsDescription = "Feel free to contact me:"
 profilePicture = "images/profile.jpg"
 favicon = "favicons/"
 
 [[params.socialIcons]]
-icon = "fab fa-linkedin-in"
+icon = "fab fa-linkedin-in fa-3x"
 title = "Linkedin"
 url = "https://www.linkedin.com/in/julia-kordick/"
 
 [[params.socialIcons]]
-icon = "fab fa-github"
+icon = "fab fa-github fa-3x"
 title = "GitHub"
 url = "https://github.com/jkordick"
 
 [[params.socialIcons]]
-icon = "fas fa-envelope"
+icon = "fas fa-envelope fa-3x"
 title = "e-mail"
 url = "mailto:moin@jkordick.dev"
 

@@ -1,5 +1,5 @@
 :root {
-    //--color-light: #74c044;
+    --color-light: #74c044;
     --color-dark: #2cd367;
     --color-dark-grey: #28292d;
     --color-black: #131515;
@@ -32,8 +32,15 @@ a {
 
 }
 
+h1,
 h2 {
     color: var(--color-white);
+
+    &.pseudo-h1 {
+        font-size: 2.5rem;
+    }
+
+
 }
 
 .base-layout {
@@ -53,13 +60,16 @@ h2 {
     align-items: center;
     border-right: 1px var(--color-white) solid;
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
-    overflow-x: hidden; 
-  
+    overflow-x: hidden;
+
+    @media (max-width: 767px) {
+        display: none;
+    }
 
     .introduction {
-        width: 400px;
+        max-width: 400px;
         margin-top: auto;
         display: flex;
         flex-direction: column;
@@ -70,7 +80,11 @@ h2 {
             margin-right: auto;
             margin-bottom: 2rem;
             border-radius: 50%;
-            width: 300px;
+            max-width: 300px;
+
+            @media (max-width: 1199px) {
+                max-width: 200px;
+            }
         }
 
         .description {
@@ -78,7 +92,23 @@ h2 {
             margin-left: auto;
             margin-right: auto;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+
+            h2 {
+                white-space: nowrap;
+
+                &#typed {
+                    min-height: 80px;
+                    white-space: break-spaces;
+                }
+
+            }
+        }
+
+        @media (max-width: 1199px) {
+            h2 {
+                font-size: 2rem;
+            }
         }
 
     }
@@ -86,10 +116,14 @@ h2 {
     .socials {
         display: flex;
         flex-direction: row;
+        margin-top: 1em;
+
         li {
+            margin-right: 1em;
             list-style: none;
         }
     }
+
 }
 
 .content {
@@ -99,19 +133,43 @@ h2 {
     flex-direction: column;
     margin-left: 30%;
 
+    @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+    }
+
+
     .nav-bar {
         .nav-tabs .nav-link {
             border: none;
             background-color: transparent;
             color: var(--color-white);
             font-weight: 500;
+
             &.active {
                 border-bottom: 3px var(--color-dark) solid
             }
         }
     }
 
-    .blog {}
+    .about {
+        padding: 24px;
+
+        @media (max-width: 575px) {
+            padding: 16px;
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            margin-top: 1em;
+
+            li {
+                margin-right: 1em;
+                list-style: none;
+            }
+        }
+    }
 
     .portfolio {}
 
@@ -127,8 +185,52 @@ h2 {
 
 
 .blog {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30%;
+    padding: 24px;
+
+    @media (max-width: 767px) {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    @media (max-width: 575px) {
+        padding: 16px;
+    }
+
+    h1 {
+        margin-top: 0.5em;
+    }
+
+    img {
+        max-width: 80%;
+
+        @media (max-width: 991px) {
+            max-width: 100%;
+        }
+    }
+
     &__summary {
         padding: 24px;
         border-bottom: 1px var(--color-white) solid;
+
+        p {
+            margin-top: 1em;
+        }
+
+        @media (max-width: 575px) {
+            padding: 16px;
+        }
+    }
+
+    a {
+        color: var(--color-white);
+
+        &:hover {
+            color: var(--color-light);
+        }
     }
 }
